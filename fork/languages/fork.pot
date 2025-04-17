@@ -1,4 +1,4 @@
-# Copyright (C) 2024 ThemeIsle
+# Copyright (C) 2025 ThemeIsle
 # This file is distributed under the GNU General Public License v2 or later.
 msgid ""
 msgstr ""
@@ -9,7 +9,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2024-11-08T09:53:34+00:00\n"
+"POT-Creation-Date: 2025-04-17T16:56:52+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.11.0\n"
 "X-Domain: fork\n"
@@ -49,7 +49,7 @@ msgid "upgrading PHP to the latest version"
 msgstr ""
 
 #. translators: %s: commands to run the theme
-#: functions.php:105
+#: functions.php:106
 msgid "You appear to be running the Fork theme from source code. Please finish installation by running %s."
 msgstr ""
 
