@@ -1,3 +1,7 @@
+##### [Version 1.0.12](https://github.com/Codeinwp/fork/compare/v1.0.11...v1.0.12) (2025-05-28)
+
+- Updated dependencies
+
 ##### [Version 1.0.11](https://github.com/Codeinwp/fork/compare/v1.0.10...v1.0.11) (2025-04-17)
 
 - Update depdencies

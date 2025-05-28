@@ -37,6 +37,7 @@ class Admin {
 
 		add_action( 'enqueue_block_editor_assets', array( $this, 'add_fse_design_pack_notice' ) );
 		add_action( 'wp_ajax_fork_dismiss_design_pack_notice', array( $this, 'remove_design_pack_notice' ) );
+		add_filter( 'themeisle_sdk_blackfriday_data', array( $this, 'add_black_friday_data' ) );
 	}
 
 	/**
@@ -337,5 +338,32 @@ class Admin {
 			2 
 		);
 		do_action( 'themeisle_internal_page', FORK_PRODUCT_SLUG, $screen->id );
+	}
+
+	/**
+	 * Add Black Friday data.
+	 *
+	 * @param array $configs The configuration array for the loaded products.
+	 *
+	 * @return array
+	 */
+	public function add_black_friday_data( $configs ) {
+		$config = $configs['default'];
+
+		// translators: %1$s - plugin name, %2$s - HTML tag, %3$s - discount.
+		$message_template = __( 'Enhance %1$s with %2$s– up to %3$s OFF in our biggest sale of the year. Limited time only.', 'fork' );
+
+		$config['dismiss']  = true; // Note: Allow dismiss since it appears on `/wp-admin`.
+		$config['message']  = sprintf( $message_template, 'Fork', 'Otter Blocks Pro', '70%' );
+		$config['sale_url'] = add_query_arg(
+			array(
+				'utm_term' => 'free',
+			),
+			tsdk_translate_link( tsdk_utmify( 'https://themeisle.link/otter-bf', 'bfcm', 'fork' ) )
+		);
+
+		$configs[ FORK_PRODUCT_SLUG ] = $config;
+
+		return $configs;
 	}
 }
