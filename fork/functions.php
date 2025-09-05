@@ -67,7 +67,7 @@ function check_php() {
  * @return void
  */
 function define_constants() {
-	define( 'FORK_VERSION', '1.0.12' );
+	define( 'FORK_VERSION', '1.0.13' );
 	define( 'FORK_DEBUG', defined( 'WP_DEBUG' ) && WP_DEBUG === true );
 	define( 'FORK_DIR', trailingslashit( get_template_directory() ) );
 	define( 'FORK_URL', trailingslashit( get_template_directory_uri() ) );
