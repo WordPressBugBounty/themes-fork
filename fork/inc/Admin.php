@@ -38,6 +38,7 @@ class Admin {
 		add_action( 'enqueue_block_editor_assets', array( $this, 'add_fse_design_pack_notice' ) );
 		add_action( 'wp_ajax_fork_dismiss_design_pack_notice', array( $this, 'remove_design_pack_notice' ) );
 		add_filter( 'themeisle_sdk_blackfriday_data', array( $this, 'add_black_friday_data' ) );
+		add_filter( 'fork_ai_connect_metadata', array( $this, 'get_ai_connect_metadata' ) );
 	}
 
 	/**
@@ -365,5 +366,26 @@ class Admin {
 		$configs[ FORK_PRODUCT_SLUG ] = $config;
 
 		return $configs;
+	}
+
+	/**
+	 * Get the data for the SDK "Connect your AI agent" module.
+	 *
+	 * @return array<string, string|string[]>
+	 */
+	public function get_ai_connect_metadata() {
+		return array(
+			'name'         => 'Fork',
+			'notice_cases' => array(
+				__( 'try a different style variation', 'fork' ),
+				__( 'edit your header and footer', 'fork' ),
+				__( 'add sections from your theme\'s patterns', 'fork' ),
+			),
+			'prompts'      => array(
+				__( 'Show me Fork\'s style variations and apply the one with the warmest palette.', 'fork' ),
+				__( 'Make my header sticky with the menu centered under the logo.', 'fork' ),
+				__( 'Add a hero pattern with a big heading and a button to the top of my home page.', 'fork' ),
+			),
+		);
 	}
 }

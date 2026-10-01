@@ -16,6 +16,14 @@ Fork is distributed under the terms of the GNU GPLv2 or later
 
 ## Changelog ##
 
+##### [Version 1.0.15](https://github.com/Codeinwp/fork/compare/v1.0.14...v1.0.15) (2026-10-01)
+
+- Updated dependencies 
+- Added AI agent support: connect your AI assistant to your site through Easy MCP.
+
+
+
+
 ##### [Version 1.0.14](https://github.com/Codeinwp/fork/compare/v1.0.13...v1.0.14) (2026-05-18)
 
 - Updated dependencies
